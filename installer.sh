@@ -43,21 +43,6 @@ cd /var/www/html/owncloud
 #Pull web installer PHP file
 sudo wget https://download.owncloud.com/download/community/setup-owncloud.php
 
-#Create database creation php file
-sudo echo '<?php
-
-    $dsn = $dsn = "mysql:host=localhost";
-    $pdo = new PDO($dsn,"root","kal123kalA");
-
-    //Creation of user "user_name"
-    $pdo->query("CREATE USER 'owncloud'@'%' IDENTIFIED BY 'kal123kalA!.';");
-    //Creation of database "new_db"
-    $pdo->query("CREATE DATABASE `owncloud`;");
-    //Adding all privileges on our newly created database
-    $pdo->query("GRANT ALL PRIVILEGES on `owncloud`.* TO 'owncloud'@'%';");
-
-?>' > database.php
-
 echo "Installation complete. Please read the instructions..."
 
 #Set owncloud folder permission to 755
@@ -85,9 +70,6 @@ hostson=`cat /home/host`
 
 #Delete previous file
 rm /home/host
-
-#Get database.php file for create database
-curl -l http://$hostson/owncloud/database.php
 
 sleep 2
 
