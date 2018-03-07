@@ -73,4 +73,4 @@ rm /home/host
 
 sleep 2
 
-echo "Please go to http://$host/owncloud/setup-owncloud.php page and run web installer..." 
+echo "Please go to http://$hostson/owncloud/setup-owncloud.php page and run web installer..." 
