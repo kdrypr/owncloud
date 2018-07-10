@@ -58,6 +58,8 @@ sleep 2
 #Start apache2 service
 sudo service apache2 start
 
+echo "If you get any error, Please change network interface name"
+
 #Find host ip automatically. If your interface address is different, please change ens33 interface name.
 ip addr show ens33 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}' > /home/host
 
