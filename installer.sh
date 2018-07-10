@@ -15,10 +15,6 @@ echo "Owncloud Installation Script"
 
 sleep 2
 
-echo "Before installation, please change mysql password fields(Line:42,45,48) and network interface field(Line:73)."
-
-sleep 2
-
 #Install dependencies
 sudo apt install -y apache2 mariadb-server libapache2-mod-php7.0 \
     php7.0-gd php7.0-json php7.0-mysql php7.0-curl \
