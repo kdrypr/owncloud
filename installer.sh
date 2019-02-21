@@ -16,47 +16,47 @@ echo "Owncloud Installation Script"
 sleep 2
 
 #Install dependencies
-sudo apt install -y apache2 mariadb-server libapache2-mod-php7.0 \
+apt install -y apache2 mariadb-server libapache2-mod-php7.0 \
     php7.0-gd php7.0-json php7.0-mysql php7.0-curl \
     php7.0-intl php7.0-mcrypt php-imagick \
     php7.0-zip php7.0-xml php7.0-mbstring
 
 #Install wget tool
-sudo apt-get install wget
+apt-get install wget
 
 #Start mysql service
-sudo service mysql start
+service mysql start
 
 #Complete mysql installation
 mysql_secure_installation 
 
 #Create owncloud directory
-sudo mkdir /var/www/html/owncloud
+mkdir /var/www/html/owncloud
 
 #Go created owncloud directory
 cd /var/www/html/owncloud
 
 #Pull web installer PHP file
-sudo wget https://download.owncloud.com/download/community/setup-owncloud.php
+wget https://download.owncloud.com/download/community/setup-owncloud.php
 
 echo "Installation complete. Please read the instructions..."
 
 #Set owncloud folder permission to 755
-sudo chmod -R 755 /var/www/html/owncloud
+chmod -R 755 /var/www/html/owncloud
 
 echo "Owncloud folder permission is setted."
 
 sleep 2
 
 #Change Owncloud folder user and group owner
-sudo chown -R www-data:www-data /var/www/html/owncloud
+chown -R www-data:www-data /var/www/html/owncloud
 
 echo "Owncloud folder owner changed."
 
 sleep 2
 
 #Start apache2 service
-sudo service apache2 start
+service apache2 start
 
 echo "If you get any error, Please change network interface name"
 
